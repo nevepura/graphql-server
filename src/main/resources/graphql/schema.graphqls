@@ -2,9 +2,12 @@ type Query {
   bookById(id: ID): Book
   booksByGenre(genre: String): [Book]
   authorById(id: ID): Author
-
 }
 
+type Mutation {
+    saveBook(id: ID, name: String, pageCount: Int, authorId: String, genre: String): Book
+    saveAuthor(id: ID, firstName: String, lastName: String, active: Boolean): Author
+}
 
 type Book {
   id: ID
