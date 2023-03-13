@@ -59,4 +59,10 @@ public class Book {
     public static List<Book> getByGenre(String genre) {
         return books.stream().filter(book -> genre.equals(book.getGenre())).collect(Collectors.toList());
     }
+
+    public static Integer deleteAllBooks() {
+        int numBooks = books.size();
+        books.clear();
+        return numBooks;
+    }
 }

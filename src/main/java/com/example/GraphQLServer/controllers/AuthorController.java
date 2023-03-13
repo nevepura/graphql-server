@@ -28,4 +28,9 @@ public class AuthorController {
                              @Argument Boolean active) {
         return Author.saveAuthor(id, firstName, lastName, active);
     }
+
+    @MutationMapping
+    public String deleteAuthorById(@Argument String id) {
+        return Author.deleteAuthorById(id);
+    }
 }

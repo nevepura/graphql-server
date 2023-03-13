@@ -30,5 +30,10 @@ public class BookController {
         return Book.store(id, name, pageCount, authorId, genre);
     }
 
+    @MutationMapping
+    public Integer deleteAllBooks() {
+        return Book.deleteAllBooks();
+    }
+
 
 }

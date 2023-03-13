@@ -13,7 +13,7 @@ public class Author {
         authors.add(new Author("author-1", "Joanne", "Rowling", true));
         authors.add(new Author("author-2", "Herman", "Melville", false));
         authors.add(new Author("author-3", "Anne", "Rice", false));
-        //authors.add(new Author("author-4", "John Ronald Reuel", "Tolkien", false));
+        authors.add(new Author("author-4", "John Ronald Reuel", "Tolkien", false));
     }
 
     private String id;
@@ -49,6 +49,12 @@ public class Author {
         Author newAuthor = new Author(id, firstName, lastName, active);
         authors.add(newAuthor);
         return newAuthor;
+    }
+
+    public static String deleteAuthorById(String id) {
+        Author author = Author.getById(id);
+        authors.remove(author);
+        return id;
     }
 
 }
